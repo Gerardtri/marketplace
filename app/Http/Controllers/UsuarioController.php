@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -11,8 +12,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        echo "Hola desde el controlador UsuarioController";
-    }
+        $data = Usuario ::all();
+        return view("usuarios.index",compact ('data'));    }
 
     /**
      * Show the form for creating a new resource.

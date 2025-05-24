@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ciudad;
 use Illuminate\Http\Request;
 
 class CiudadController extends Controller
@@ -11,7 +12,8 @@ class CiudadController extends Controller
      */
     public function index()
     {
-        echo "Hola desde el controlador CiudadController";
+        $data = Ciudad ::all();
+        return view("ciudades.index",compact ('data'));
     }
 
     /**

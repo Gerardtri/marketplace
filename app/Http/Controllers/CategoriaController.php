@@ -13,9 +13,11 @@ class CategoriaController extends Controller
      */
     public function index()
     {
+        
       $data = Categoria::all();
+      return view('categorias.index', compact('data'));
 
-      dd($data->toArray());
+      
 
     }
 
@@ -32,6 +34,12 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
+        $categoria = new Categoria();
+        $categoria->fill($request->all());
+        $categoria->save();
+        return redirect('categorias');
+        
+        
         //
     }
 

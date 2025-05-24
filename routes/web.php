@@ -10,7 +10,7 @@ use App\Http\Controllers\ProductoController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
 
 Route::resource('categorias', CategoriaController::class);
