@@ -1,19 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Comentario;
 use Illuminate\Http\Request;
 
 class ComentarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        echo "Hola desde el controlador ComentarioController";
-        
-    }
+   /**
+ * Muestra una lista de los comentarios.
+ */
+public function index()
+{
+    $data = Comentario::all();
+    return view("comentarios.index", compact('data'));
+}
+
 
     /**
      * Show the form for creating a new resource.
